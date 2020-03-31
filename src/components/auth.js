@@ -1,8 +1,9 @@
 import React from 'react';
-import {f,database,storage,auth} from '../../config/config.js';
-import { IonAvatar, IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, 
-    IonTitle, IonToolbar,IonButton,IonApp, IonText, IonInput, IonGrid, IonRow, IonCol} from '@ionic/react';
-
+import {f,database,storage,auth} from './config.js';
+import { IonAvatar, IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage,
+IonTitle, IonToolbar,IonButton,IonApp, IonText, IonInput, IonGrid, IonRow, IonCol} from '@ionic/react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Userauth extends React.Component{
     constructor(props){
@@ -24,10 +25,12 @@ login=async()=>{
     try{
         let user=await auth.signInWithEmailAndPassword(email,password);
       }catch(error){
-        console.log(error)
+        console.log(error);
+        toast('incorect credentials',{type:'error'});
     }
    }else{
-    alert('email or password is empty');
+    toast('user name or password is empty',{type:'error'});
+  
   }
 
 }
@@ -50,27 +53,22 @@ CreatUserObj=(userobj,email)=>{
     try{
         let user=await auth.createUserWithEmailAndPassword(email.trim(),password)
         .then((userobj)=>this.CreatUserObj(userobj.user,email))
-        .catch((error)=>console.log(error))
+        .catch((error)=>console.log(error));
+        toast('incorect credentials',{type:'error'});
       }catch(error){
-        console.log(error)
+        console.log(error);
+        toast('incorect credentials',{type:'error'});
     }
    }else{
-    console.log('email or password is empty');
+    toast('email or password is empty',{type:'error'});
   }
 
 }
 
 render(){
      return(
+            <div className="roomsHerok">
          <div className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center" >
-         <div  >
-             <IonItem>
-             <IonButton>
-                 {this.props.message}
-             </IonButton>
-            </IonItem>
-         </div >
-         
          { this.state.authstep==0 ? (
              <div  className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
              <IonButton onClick={()=>this.setState({authstep:1})}>login</IonButton>
@@ -106,6 +104,7 @@ render(){
                         <IonRow justify-content-center align-Items-center>
                             <IonCol>
                             <IonButton onClick={()=>this.login()}>login</IonButton>
+                            <ToastContainer />
                             </IonCol>
                         </IonRow >
                     </IonGrid>
@@ -144,13 +143,16 @@ render(){
                         <IonRow justify-content-center align-Items-center>
                             <IonCol>
                             <IonButton onClick={()=>this.signup()}>register </IonButton>
+                            <ToastContainer />
                             </IonCol>
                         </IonRow>
                     </IonGrid>
           
                )} 
          </div>)}
-         </div>);
+         </div>
+        </div>
+);
  }
 }
 export default Userauth;

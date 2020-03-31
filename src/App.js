@@ -1,169 +1,40 @@
-import React,{Component} from 'react';
-import Navigation from './components/Navigation/Navigation';
-import { IonAvatar, IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, 
-           IonTitle, IonToolbar,IonButton,IonApp, IonMenu} from '@ionic/react';
-import Add from './components/add/add';
-import Update from './components/update/update';
-import Signin from './components/Signin/Signin';
-import Home from './components/Home/Home';
-import Register from './components/Register/Register';
-import {f,database,storage,auth} from './config/config.js';
-
+import React, { Component } from 'react';
+import {BrowserRouter,Link,Route,Switch} from 'react-router-dom';
+import home from './components/home';
+import prempdf from './components/prempdf';
+import premvideos from './components/premvideos';
+import tradingview from './components/tradingview';
+import getcode from './components/getcode';
+import videoplayer from './components/videoplayer';
+import { IonMenu, IonItem, IonContent, IonMenuToggle, IonApp, IonSplitPane, IonPage, IonRouterOutlet } from '@ionic/react';
+import Menu from './components/Menu';
+import "./App.css";
 class App extends Component{
-    constructor(props){
-        super(props);
-        this.state={
-            productname:'',
-            packSize:'',
-            quantity:'',
-            price:'',
-            amount:'',
-            amt:'',
-            isSignedIn: false,
-            routes:'home',
-            products:[],
-            searchfield:'',
-            updates:[]
-            
-        }
-    }
-onroutechange=(route)=>{
-    if (route === 'signout') {
-        this.setState({isSignedIn: false})
-      } else if (route === 'home') {
-        this.setState({isSignedIn: true})
-      }
- this.setState({routes:route})
+    constructor(){
+      super();
 }
-
-onproductname=(event)=>{
-    this.setState({productname:event.target.value})
-}
-onpacksize=(event)=>{
-    this.setState({packSize:event.target.value})
-}
-onprice=(event)=>{
-    this.setState({price:event.target.value})
-}
-onquantity=(event)=>{
-    this.setState({quantity:event.target.value})
-}
-
-onamount=(event)=>{
-    this.setState({amount:event.target.value})
-}
-
-onsearchfield=(event)=>{
-    this.setState({searchfield:event.target.value})
-}
-
-onamt=()=>{
-    var a=parseFloat(this.state.price);
-    var b=parseFloat(this.state.quantity);
-    const rounded = a * b;
-    var d= rounded.toString();
-    this.setState({amt:d});
-
-}
-
-updated=(item)=>{
-    var uping=[];
-    uping.push({
-        price: item.price,
-        quantity:item.quantity,
-        productname:item.productname,
-        packsize :item.productsize,
-        amount:item.amout
-     }
-    );
-this.setState({updates:uping})
-}
-
-render(){
-    const {updates,amt, productname,packSize, quantity, price,amount, routes, searchfield ,fetchproduct, isSignedIn} = this.state;
-    if (this.state.routes==='signin'){
-        return(
-        <ion-app>
-         
-            <Signin onroutechange={this.onroutechange}/>
-        </ion-app>
-            );
-    }else if (this.state.routes==='update'){
-        return( <ion-app>
-            
-  <Update onroutechange={this.onroutechange} 
- onsearchfield={this.onsearchfield}
- onquantity={this.onquantity}
- onprice={this.onprice}
- onpacksize={this.onpacksize}
- onproductname={this.onproductname}
- onamount={this.onamount}
- // here we set state
-packsize={packSize}
- productname={productname}
- price={price}
- quantity={quantity}
- updates={updates}
- amount={amount}/>
-            </ion-app>
-           );
-}else if (this.state.routes==='add'){
-        return(
-            <div>
-             
-            <Add onroutechange={this.onroutechange}
-            // here we update the stateupdate
-            onquantity={this.onquantity}
-            onprice={this.onprice}
-            onpacksize={this.onpacksize}
-            onproductname={this.onproductname}
-            onamount={this.onamount}
-            onamt={this.onamt}
-            // here we set state
-           packsize={packSize}
-            productname={productname}
-            price={price}
-            quantity={quantity}
-            amount={amount}
-            amt={amt}
-            />
-            </div>
-            
-        );
-}else if (this.state.routes==='register'){
-        return(<ion-app>
-         
-              <Navigation onroutechange={this.onroutechange} isSignedIn={this.isSignedIn}/>
-               <Register onroutechange={this.onroutechange}/>
-            </ion-app>
-        );
-}else if  (this.state.routes==='home'){
-        return(
-        <IonApp>
-           
-            <Home  
- onroutechange={this.onroutechange} 
- onsearchfield={this.onsearchfield}
- onquantity={this.onquantity}
- onprice={this.onprice}
- onpacksize={this.onpacksize}
- onproductname={this.onproductname}
- onamount={this.onamount}
- updated={this.updated}
- // here we set state
-packsize={packSize}
- productname={productname}
- price={price}
- quantity={quantity}
- updates={updates}
- amount={amount}/>
-        </IonApp>
+   render(){
+       return(
+           <BrowserRouter>
+            <IonApp>
+                  
+                    <Menu/>
+                    <IonPage id="main">
+                        <IonRouterOutlet>
+                        <Route exact path="/" component={home}/>
+                        <Route path="/premvideos" component={premvideos}/>
+                        <Route path="/prempdf" component={prempdf}/>
+                        <Route path="/tradingview" component={tradingview}/> 
+                        <Route path="/getcode" component={getcode}/> 
+                        <Route exact path="/videoplayer/:slug/" component={videoplayer}/>
+                        </IonRouterOutlet>
+                       </IonPage>
                  
-        
-             );
-    }
-   
-};
+               </IonApp> 
+           </BrowserRouter>
+              
+       );
+   }
 }
 
 export default App;
