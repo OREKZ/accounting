@@ -59,6 +59,7 @@ class home extends Component{
       <h1>start today</h1>
       <div />
       <h1>with just NGN3000</h1>
+      <iframe src="https://drive.google.com/file/d/1yGQU4wLFm3I9UT1XRRw-0lc1nmJJqyO7/preview" width="300" height="300"></iframe>
       <Link to='/premvideos' className="btn-primary"> 
       start learning
        </Link>

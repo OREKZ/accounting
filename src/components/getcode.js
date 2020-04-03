@@ -7,7 +7,7 @@ import {f,database,storage,auth} from './config.js';
 import Userauth from './auth.js';
 import {IonMenuButton,IonCardHeader,IonButton, IonMenu,
     IonCard,IonCardContent,IonText,
-    IonItem, IonContent, IonMenuToggle, IonApp, IonSplitPane,
+    IonItem, IonContent, IonMenuToggle, IonApp, InponSplitPane,
      IonPage, IonRouterOutlet, IonHeader, IonToolbar, IonTitle, IonList } from '@ionic/react';
 import{MdAddCircle,MdUpdate,MdSystemUpdateAlt,MdAddShoppingCart,MdHome} from 'react-icons/md';
 
@@ -18,8 +18,8 @@ class getcode extends Component{
             firebasecode:'',
            isLoggedin:false,
            users:'',
-           key: "pk_test_########################################", //PAYSTACK PUBLIC KEY
-    		email: "foobar@example.com",  // customer email
+           key: "pk_test_9eaa497e52f3d21d1c58c5f7659e3d88c3d42c0d", //PAYSTACK PUBLIC KEY
+    		email: "ositaositas@yahoo.com",  // customer email
             amount: 300000 ,//equals NGN100,
             codeavailable:false
         }
@@ -120,9 +120,7 @@ let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-.
              </div>
              </div>
         ):(<Userauth message={"please login to start learnig"}/> )}
-         
           </>
-
       );
   }
   

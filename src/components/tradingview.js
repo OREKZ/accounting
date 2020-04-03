@@ -5,7 +5,7 @@ import userauth from './auth';
 import {IonButton, IonMenu, IonItem, IonContent, IonMenuToggle, IonApp, IonSplitPane, IonPage, IonRouterOutlet, IonHeader, IonToolbar, IonTitle, IonList, IonMenuButton, IonCardHeader, IonCard, IonCardContent } from '@ionic/react';
 import{MdAddCircle,MdUpdate,MdSystemUpdateAlt,MdAddShoppingCart,MdHome} from 'react-icons/md';
 import TradingViewWidget, { Themes } from 'react-tradingview-widget';
-
+import {f,database,storage,auth} from './config.js';
 class tradingview extends Component{
     constructor(){
       super();
@@ -14,7 +14,7 @@ class tradingview extends Component{
         users:''
 }
     }
-/*componentDidMount=()=>{
+componentDidMount=()=>{
     var that=this;
     f.auth().onAuthStateChanged(function(user){
         if(user){
@@ -27,7 +27,7 @@ class tradingview extends Component{
         }
     });
 
-}*/
+}
    render(){
        return(
         <>

@@ -95,7 +95,7 @@ render(){
                   </div>
             )
         :  
-        <div className='code'>
+        <div className='code' data-aos="animation_name">
         <div className="flex flex-column">
         {items.map(item => {
           return(<div>
