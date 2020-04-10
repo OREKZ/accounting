@@ -5,7 +5,6 @@ import starter from './components/starter';
 import premvideos from './components/premvideos';
 import tradingview from './components/tradingview';
 import getcode from './components/getcode';
-import modal from './components/modal';
 import videoplayer from './components/videoplayer';
 import { IonMenu, IonItem, IonContent, IonMenuToggle, IonApp, IonSplitPane, IonPage, IonRouterOutlet } from '@ionic/react';
 import Menu from './components/Menu';
@@ -29,7 +28,6 @@ class App extends Component{
                         <Route path="/getcode" component={getcode}/> 
                         <Route exact path="/videoplayer/:slug/" component={videoplayer}/>
                         </IonRouterOutlet>
-                        <modal/>
                        </IonPage>
                  
                </IonApp> 
