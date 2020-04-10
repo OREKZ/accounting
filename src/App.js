@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import {BrowserRouter,Link,Route,Switch} from 'react-router-dom';
 import home from './components/home';
-import prempdf from './components/prempdf';
+import starter from './components/starter';
 import premvideos from './components/premvideos';
 import tradingview from './components/tradingview';
 import getcode from './components/getcode';
+import modal from './components/modal';
 import videoplayer from './components/videoplayer';
 import { IonMenu, IonItem, IonContent, IonMenuToggle, IonApp, IonSplitPane, IonPage, IonRouterOutlet } from '@ionic/react';
 import Menu from './components/Menu';
@@ -22,12 +23,13 @@ class App extends Component{
                     <IonPage id="main">
                         <IonRouterOutlet>
                         <Route exact path="/" component={home}/>
+                        <Route path="/starter" component={starter}/>
                         <Route path="/premvideos" component={premvideos}/>
-                        <Route path="/prempdf" component={prempdf}/>
                         <Route path="/tradingview" component={tradingview}/> 
                         <Route path="/getcode" component={getcode}/> 
                         <Route exact path="/videoplayer/:slug/" component={videoplayer}/>
                         </IonRouterOutlet>
+                        <modal/>
                        </IonPage>
                  
                </IonApp> 
