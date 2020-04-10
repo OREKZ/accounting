@@ -44,6 +44,10 @@ background{
   align-items: center;
   justify-content: center;
 }
+.roomsHer {
+  background-color: #222;
+  padding-bottom: 50px;
+}
 .roomsHerok {
   min-height: calc(100vh - 66px);
   background: url("kevin-ku-w7ZyuGYNpRQ-unsplash (2).jpg") center/cover no-repeat;
@@ -163,4 +167,45 @@ background{
     color: rgb(255, 255, 255);
     opacity: 1; /* Firefox */
   }
-  
+  /* services */
+.services {
+  padding: 5rem 0;
+}
+.services {
+  background: var(--darkGrey);
+  text-align: center;
+}
+.services-center {
+  width: 90vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 50px;
+}
+.service span {
+  display: inline-block;
+  color: var(--primaryColor);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+.services h6 {
+  letter-spacing: var(--mainSpacing);
+}
+.services p {
+  width: 80%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 992px) {
+  .services-center {
+    width: 95vw;
+    max-width: 1170px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .services p {
+    width: 100%;
+  }
+}
+/*end of services */
