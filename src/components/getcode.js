@@ -18,7 +18,7 @@ class getcode extends Component{
             firebasecode:'',
            isLoggedin:false,
            users:'',
-           key: "", //PAYSTACK PUBLIC KEY
+           key: "pk_live_b2f714a38458480370b4dad36ff33ce952699b7c", //PAYSTACK PUBLIC KEY
     		email: "ositaositas@yahoo.com",  // customer email
             amount: 300000 ,//equals NGN100,
             codeavailable:false
