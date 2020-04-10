@@ -18,7 +18,7 @@ class getcode extends Component{
             firebasecode:'',
            isLoggedin:false,
            users:'',
-           key: "pk_test_9eaa497e52f3d21d1c58c5f7659e3d88c3d42c0d", //PAYSTACK PUBLIC KEY
+           key: "pk_live_b2f714a38458480370b4dad36ff33ce952699b7c", //PAYSTACK PUBLIC KEY
     		email: "ositaositas@yahoo.com",  // customer email
             amount: 300000 ,//equals NGN100,
             codeavailable:false
@@ -92,7 +92,7 @@ let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-.
              <IonCard>
                  <IonCardContent>
                      <IonItem>
-                     <IonText>pay $10 to get your login code</IonText>
+                     <IonText>pay NGN 3000 to get your login code</IonText>
                      </IonItem>
                  </IonCardContent>
              </IonCard>
