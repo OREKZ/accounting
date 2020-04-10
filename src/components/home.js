@@ -33,7 +33,7 @@ class home extends Component{
       <h1>contek forex school</h1>
       <div />
       <p>we provide life changing forex <strong>video</strong> courses with the lowest price ever</p>
-      <Link to='/premvideos'className="btn-primary"> 
+      <Link to='/starter'className="btn-primary"> 
       start now
        </Link>
     </div>
@@ -49,7 +49,7 @@ class home extends Component{
       <h4>06-metatrader 4</h4>
       <h4>07-calculating risks the smart way</h4>
       <h4>08-examples using real money</h4>
-      <Link to='/premvideos' className="btn-primary"> 
+      <Link to='/starter' className="btn-primary"> 
       start learning
        </Link>
 </div>
@@ -58,12 +58,11 @@ class home extends Component{
     <div className="banner">
       <h1>start today</h1>
       <div />
-      <h1>with just NGN3000</h1>
-      <iframe src="https://drive.google.com/file/d/1yGQU4wLFm3I9UT1XRRw-0lc1nmJJqyO7/preview" width="300" height="300"></iframe>
-      <Link to='/premvideos' className="btn-primary"> 
-      start learning
+      <div style={{paddingBottom:'50px'}}>
+      <Link  className="btn-primary"> 
+      contek 2020
        </Link>
-     
+       </div>
     </div>
           </div>
    
