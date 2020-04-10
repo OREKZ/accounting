@@ -91,13 +91,13 @@ render(){
                         </IonRow>
                         <IonRow justify-content-center align-Items-center>
                             <IonCol >
-                                <IonText>email</IonText>
+                                <IonText style={{color:'white'}}>email</IonText>
                             <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"type='email' onChange={(event)=>this.setState({email:event.target.value})}/>
                             </IonCol>
                         </IonRow>
                         <IonRow justify-content-center align-Items-center>
                             <IonCol>
-                            <IonText>password</IonText>
+                            <IonText  style={{color:'white'}}>password</IonText>
                             <input  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"type='password' onChange={(event)=>this.setState({password:event.target.value})}/>
                             </IonCol>
                         </IonRow >
@@ -124,19 +124,19 @@ render(){
                         </IonRow >
                         <IonRow justify-content-center align-Items-center>
                             <IonCol>
-                            <IonText>email</IonText>
+                            <IonText  style={{color:'white'}}>email</IonText>
                             <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type='email' onChange={(event)=>this.setState({email:event.target.value})}/>
                             </IonCol>
                         </IonRow >
                         <IonRow justify-content-center align-Items-center>
                             <IonCol>
-                            <IonText>password</IonText>
+                            <IonText  style={{color:'white'}}>password</IonText>
                             <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type='password' onChange={(event)=>this.setState({password:event.target.value})}/>
                             </IonCol>
                         </IonRow >
                         <IonRow justify-content-center align-Items-center>
                             <IonCol>
-                            <IonText>name</IonText>
+                            <IonText  style={{color:'white'}}>name</IonText>
                             <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" onChange={(event)=>this.setState({name:event.target.value})}/>
                             </IonCol>
                         </IonRow >
